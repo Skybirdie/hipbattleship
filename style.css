@@ -1,0 +1,43 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(10, 40px);
+  grid-gap: 2px;
+}
+
+.row {
+  display: contents;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #333;
+  background-color: #1e90ff;
+  position: relative;
+}
+
+.cell.ship {
+  background-color: #808080;
+  background-image: url('path_to_ship_image.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.cell.hit {
+  background-color: red;
+}
+
+.cell.miss {
+  background-color: white;
+}
+
+#controls {
+  margin-top: 20px;
+}
