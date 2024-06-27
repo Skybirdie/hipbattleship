@@ -1,11 +1,3 @@
-body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
 #gamesboard-container {
   width: 600px;
   display: flex;
@@ -86,10 +78,6 @@ body {
 
 .cell.miss {
   background-color: white;
-}
-
-#controls {
-  margin-top: 20px;
 }
 
 

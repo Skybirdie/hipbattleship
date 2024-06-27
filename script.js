@@ -22,7 +22,7 @@ const width = 10; // 10x10 board
 function createBoard(color, user) {
     const gameBoardContainer = document.createElement('div')
   gameBoardContainer.classList.add('game-board')
-  gameBoardContainer.style.backgrounColor = color
+  gameBoardContainer.style.backgroundColor = color
   gameBoardContainer.id = user
 
   for (let i = 0; i < width * width; i++)
@@ -31,7 +31,7 @@ function createBoard(color, user) {
      cell.id = i
      gameBoardContainer.append(cell)
      }
-  gameBoardContainer.append(gameBoardContainer)
+  gamesBoardContainer.append(gameBoardContainer)
 }
 createBoard('yellow', 'player')
 createBoard('pink', 'computer')
