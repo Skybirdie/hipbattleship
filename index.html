@@ -3,14 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Battleship Game</title>
+  <title>HipBattleship</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Battleship Game</h1>
-  <div id="game-board"></div>
+  <h1>HipBattleship</h1>
+
+  <div id="game-info"></div>
+    <p>Turn: <span id="turn-display"></span></p>
+    <p>Info: <span id="info"></span></p>
+  </div>
+
+  <div id="gamesboard-container"></div>
+
+  <div class="option-container"></div>
+    <div id="0" class="smallbird-preview smallbird" draggable="true"></div>
+    <div id="1" class="ttbird-preview ttbird" draggable="true"></div>
+    <div id="2" class="hummingbird-preview hummingbird" draggable="true"></div>
+    <div id="3" class="manatee-preview manatee" draggable="true"></div>
   <div id="controls">
-    <button onclick="startGame()">Start Game</button>
+    <button id="flip-button">Flip</button>
+    <button id="start-button">Start</button>
   </div>
   <script src="script.js"></script>
 </body>
