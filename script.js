@@ -58,10 +58,11 @@ let notDropped
 function getValidity(allBoardCells, isHorizontal, startIndex, ship) {
 
    let validStart = isHorizontal ? startIndex <= width * width - ship.length ? startIndex : 
-       width * width - shil.length : 
+       width * width - ship.length : 
        //handle vertical
    startIndex <= width * width - width * ship.length ? startIndex : 
        startIndex - ship.length * width + width
+
    let shipCells = []
 
    for (let i = 0; i < ship.length; i++) {
@@ -72,18 +73,19 @@ function getValidity(allBoardCells, isHorizontal, startIndex, ship) {
        } 
    }
 
-       Let valid
+       let valid
 
        if (isHorizontal) {
-           ship.Cells.every((_shipCell, index) => 
-                valid = shipCell[0].id % width !== width - (shipCells.length - (index +1)))
+           shipCells.every((_shipCell, index) => 
+                valid = shipCells[0].id % width !== width - (shipCells.length - (index + 1)))
        } else {
            shipCells.every((shipCell, index) =>
                 valid = shipCells[0].id < 90 + (width * index + 1)
        }
    }
 
-       const notTaken = shipCells.every(shipCell => !shipCell.classlist.contains('taken')}
+
+       const notTaken = shipCells.every(shipCell => !shipCell.classList.contains('taken')}
 
        return {shipCells, valid, notTaken}
 
@@ -99,13 +101,22 @@ function addShipPiece(user, ship, startId) {
 
    let startIndex = startId ? startId : randomStartIndex
 
-   const {shipCells, valid, notTaken} = getValidity(allBoardCells, isHorizontal, startIndex, ship)
+
+   const { shipCells, valid, notTaken} = getValidity(allBoardCells, isHorizontal, startIndex, ship)
+
+   for (let i = 0; i < ship.length; i++) {
+       if (isHorizontal) {
+        shipCells.push(allBoardCells[Number(validStart) + i])
+       } else {
+        shipCells.push(allBoardCells[Number(validStart) = i * width])
+       } 
+   }
 
        if (valid && notTaken) {
            shipCells.forEach(shipCell => {
-              shipCell.classlist.add(ship.name)
-              shipCell.classlist.add('taken')
-              }
+              shipCell.classList.add(ship.name)
+              shipCell.classList.add('taken')
+              })
        } else {
            if (user === 'computer') addShipPiece(user, ship, startId)
            if (user === 'player') notDropped = true
@@ -117,12 +128,12 @@ ships.forEach(ship => addShipPiece('computer', ship))
 //drag player ships
 let draggedShip
 const optionShips = Array.from(optionContainer.children)
-optionShips.forEach(optionShip => optionShip. addEventListener('dragstart', dragstart))
+optionShips.forEach(optionShip => optionShip.addEventListener('dragstart', dragstart))
 
 const allPlayerCells = document.querySelectorAll('#player div')
-allPlayerCells.forEach(PlayerCell => {
-       PlayerCell.addEventListener('dragover', dragover)
-       PlayerCell.addEventListener('drop', dropShip)
+allPlayerCells.forEach(playerCell => {
+       playerCell.addEventListener('dragover', dragover)
+       playerCell.addEventListener('drop', dropShip)
 
 function dragStart(e) {
     notDropped = false
@@ -131,7 +142,7 @@ function dragStart(e) {
 function dragOver(e) {
     e.preventDefault()
     const ship = ships[draggedShip.id]
-    highlightArea(e.target.id)
+    highlightArea(e.target.id, ship)
 }
 function dropShip(e) {
     const startId = e.target.id
@@ -143,16 +154,16 @@ function dropShip(e) {
 }
 
 // Add highlight
-function highlightArea(startIndex, ship) {
+function highlightArea( startIndex, ship) {
      const allBoardCells = document.querySelectorAll('#player div')
      let isHorizontal = angle === o 
 
-     const {shipCells, valid, notTaken} =getValidity(allBoardCells, isHorizontal, startIndex, ship)
+     const {shipCells, valid, notTaken } = getValidity(allBoardCells, isHorizontal, startIndex, ship)
 
      if (valid && notTaken) {
-         shipBlocks.forEach(shipCell => {
-             shipCell.classlist.add('hover')
-             setTimeout(() => shipCell.classlist.remove('hover'), 500)
+         shipCells.forEach(shipCell => {
+             shipCell.classList.add('hover')
+             setTimeout(() => shipCell.classList.remove('hover'), 500)
          })
      }
 }
@@ -169,23 +180,25 @@ function startGame() {
          } else {
              const allBoardCells = document.querySelectorAll('#computer div')
              allBoardCells.forEach(cell => cell.addEventListener('click', handleClick))
+             playerTurn = true 
+             turnDisplay.textContent = 'your move'
+             infoDisplay.textContent = 'The game has started!'   
+
             }
-         playerTurn = true 
-         turnDisplay.textContent = 'your move'
-         infoDisplay.textContent = 'The game has started!'      
+   
    }
 }
 
 startButton.addEventListener('click', startGame)
 
-Let playerHits = []
-Let computerHits = []
+let playerHits = []
+let computerHits = []
 const playerSunkShips = []
 const computerSunkShips = []
 
 function handleClick(e) {
    if (!gameOver) {
-       if (e.target.classList.container('taken')) {
+       if (e.target.classList.contains('taken')) {
           e.target.classList.add('boom')
           infoDisplay.textContent = 'You hit the enemy ship!'
           let classes = Array.from(e.target.classList)
@@ -196,7 +209,7 @@ function handleClick(e) {
           checkScore('player', playerHits, playerSunkShips)
 
       }
-      if (e.target.classList.contain('taken')) {
+      if (!e.target.classList.contain('taken')) {
           infoDisplay.textContent = 'nothing hit this time'
           e.target.classList.add('empty')
       }
@@ -210,7 +223,7 @@ function handleClick(e) {
 
 //define the computer go
 function computerGo() {
-       if (!gameOver) {
+     if (!gameOver) {
            turnDisplay.textContent = 'Enemy turn to play'
            infoDisplay.textContent = 'Enemy is thinking...'
 
@@ -235,7 +248,7 @@ function computerGo() {
                    classes = classes.filter(className => className !== 'taken')
                    computerHits.push(...classes)
                    checkScore('computer', computerHits, computerSunkShips)
-               } else if (
+               } else if {
                    infoDisplay.textContent = 'nothing hit this time'
                    allBoardCells[randomGo].classList.add('empty')
                }
@@ -273,39 +286,15 @@ function checkScore(user, userHits, userSunkShips) {
     checkShip('hummingbird', 2)
     checkShip('manatee', 3)
 
-    if(playerSunkShips.length === 5) {
+    if(playerSunkShips.length === 4) {
     infoDisplay.textContent = 'you sunk all enemy ships! YOU WIN!'
+    gameOver = true
     }
 
-    if(computerSunkShips.length === 5) {
+    if(computerSunkShips.length === 4) {
     infoDisplay.textContent = 'the enemy has sunk all your ships... You lose!'
+    gameOver = true
     }
 }
 
 
-// Place ship function (example)
-function placeShip(i, col, length, horizontal) {
-  for (let i = 0; i < length; i++) {
-    const cell = document.querySelector(`.cell[data-i='${i}'][data-col='${col + (horizontal ? i : 0)}']`);
-    if (cell) {
-      cell.classList.add('ship');
-    }
-  }
-}
-
-// Add event listeners for shooting
-gameBoard.addEventListener('click', (event) => {
-  if (event.target.classList.contains('cell')) {
-    handleShot(event.target);
-  }
-});
-
-function handleShot(cell) {
-  if (cell.classList.contains('ship')) {
-    cell.classList.add('hit');
-  } else {
-    cell.classList.add('miss');
-  }
-}
-
-startGame();

@@ -38,22 +38,18 @@ body {
 
 .cell.smallbird {
   background-color: brown;
-  background-image: url('https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/txrD27YCa0XdVAf7t9XU/pub/YizwRBzpqCtTue0xPy9F.png');
 }
 
 .cell.ttbird {
   background-color: blue;
-  background-image: url('https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/txrD27YCa0XdVAf7t9XU/pub/5rqdFFCKZGu0z4qHqF0A.png');
 }
 
 .cell.hummingbird {
   background-color: green;
-  background-image: url('https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/txrD27YCa0XdVAf7t9XU/pub/ckjaysiOvB9Xv14ODURT.png');
 }
 
 .cell.manatee {
   background-color: orange;
-  background-image: url('https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/txrD27YCa0XdVAf7t9XU/pub/F4eGgz1NRxN8SwSqM6MT.png');
 }
 
 
@@ -81,8 +77,6 @@ body {
   height: 120px;
   margin: 3px;
 }
-
-
 
 
 
