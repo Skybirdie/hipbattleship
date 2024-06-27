@@ -1,5 +1,4 @@
-const gameBoard = document.getElementById('game-board');
-const boardSize = 10; // 10x10 board
+const gamesBoardContainer = document.querySelector('#gamesboard-container');
 const optionContainer = document.querySelector('.option-container');
 const flipButton = document.querySelector('#flip-button');
 const startButton = document.querySelector('#start-button');
@@ -7,39 +6,37 @@ const infoDisplay = document.querySelector('#info');
 const turnDisplay = document.querySelector('#turn-display');
 
 let angle = 0
-// function flip() {
+// function flip
 function flip() {
   const optionShips = Array.from(optionContainer.children)
     angle = angle === 0 ? 90 : 0
   optionShips.forEach(optionShip => optionShip.style.transform = 'rotate(${angle}deg)')
-  // Example: place a ship at row 2, col 3 of length 3 horizontally
-  placeShip(2, 3, 3, true);
-  // Add more game logic here (e.g., handling clicks)
+
 }
 
 flipButton.addEventListener('click', flip)
 
 
 // Initialize game board
+const width = 10; // 10x10 board
 function createBoard(color, user) {
-    gameBoard.id = user
-  gameBoard.innerHTML = '';
-  for (let row = 0; row < boardSize; row++) {
-    const rowDiv = document.createElement('div');
-    rowDiv.className = 'row';
-    for (let col = 0; col < boardSize; col++) {
-      const cellDiv = document.createElement('div');
-      cellDiv.className = 'cell';
-      cellDiv.dataset.row = row;
-      cellDiv.dataset.col = col;
-      rowDiv.appendChild(cellDiv);
-    }
-    gameBoard.appendChild(rowDiv);
-  }
-}
+    const gameBoardContainer = document.createElement('div')
+  gameBoardContainer.classList.add('game-board')
+  gameBoardContainer.style.backgrounColor = color
+  gameBoardContainer.id = user
 
-  createBoard('yellow', 'player')
-  createBoard('red', 'computer')
+  for (let i = 0; i < width * width; i++)
+     const cell = document.createElement('div')
+     cell.classList.add('cell')
+     cell.id = i
+     gameBoardContainer.append(cell)
+     }
+  gameBoardContainer.append(gameBoardContainer)
+}
+createBoard('yellow', 'player')
+createBoard('pink', 'computer')
+
+
 
 
 //Creating Ships
@@ -67,11 +64,11 @@ function getValidity(allBoardCells, isHorizontal, startIndex, ship) {
        startIndex - ship.length * width + width
    let shipCells = []
 
-   for (let row = 0; row < ship.length; row++) {
+   for (let i = 0; i < ship.length; i++) {
        if (isHorizontal) {
-        shipCells.push(allBoardCells[Number(validStart) + row])
+        shipCells.push(allBoardCells[Number(validStart) + i])
        } else {
-        shipCells.push(allBoardCells[Number(validStart) = row * width])
+        shipCells.push(allBoardCells[Number(validStart) = i * width])
        } 
    }
 
@@ -106,9 +103,9 @@ function addShipPiece(user, ship, startId) {
 
        if (valid && notTaken) {
            shipCells.forEach(shipCell => {
-                shipCell.classlist.add(ship.name)
-                shipCell.classlist.add('taken')
-        }
+              shipCell.classlist.add(ship.name)
+              shipCell.classlist.add('taken')
+              }
        } else {
            if (user === 'computer') addShipPiece(user, ship, startId)
            if (user === 'player') notDropped = true
@@ -285,18 +282,11 @@ function checkScore(user, userHits, userSunkShips) {
     }
 }
 
-  createBoard();
-  // Example: place a ship at row 2, col 3 of length 3 horizontally
-  placeShip(2, 3, 3, true);
-  // Add more game logic here (e.g., handling clicks)
-}
-
-
 
 // Place ship function (example)
-function placeShip(row, col, length, horizontal) {
+function placeShip(i, col, length, horizontal) {
   for (let i = 0; i < length; i++) {
-    const cell = document.querySelector(`.cell[data-row='${row}'][data-col='${col + (horizontal ? i : 0)}']`);
+    const cell = document.querySelector(`.cell[data-i='${i}'][data-col='${col + (horizontal ? i : 0)}']`);
     if (cell) {
       cell.classList.add('ship');
     }
