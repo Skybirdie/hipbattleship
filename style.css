@@ -1,7 +1,7 @@
 #gamesboard-container {
   width: 600px;
   display: flex;
-  justified-content: space-between;
+  justify-content: space-between;
 }
 
 .game-board {
@@ -12,12 +12,10 @@
   flex-wrap: wrap;
 }
 
-
 .cell {
   width: 30px;
   height: 30px;
 }
-
 
 .option-container {
   width: 640px;
@@ -28,49 +26,33 @@
   align-items: center;
 }
 
-.cell.smallbird {
+.smallbird-preview {
+  width: 30px;
+  height: 30px;
   background-color: brown;
+  margin: 3px;
 }
 
-.cell.ttbird {
-  background-color: blue;
-}
-
-.cell.hummingbird {
-  background-color: green;
-}
-
-.cell.manatee {
-  background-color: orange;
-}
-
-
-.cell.smallbird-preview {
+.ttbird-preview {
   width: 60px;
   height: 30px;
+  background-color: blue;
   margin: 3px;
 }
 
-
-.cell.ttbird-preview {
-  width: 120px;
-  height: 30px;
-  margin: 3px;
-}
-
-.cell.hummingbird-preview {
+.hummingbird-preview {
   width: 60px;
   height: 60px;
+  background-color: green;
   margin: 3px;
 }
 
-.cell.manatee-preview {
-  width: 150px;
-  height: 120px;
+.manatee-preview {
+  width: 90px;
+  height: 30px;
+  background-color: orange;
   margin: 3px;
 }
-
-
 
 .cell.hit {
   background-color: red;
@@ -79,7 +61,6 @@
 .cell.miss {
   background-color: white;
 }
-
 
 .hover {
   background-color: grey;
@@ -90,7 +71,7 @@
 #computer .hummingbird,
 #computer .manatee {
   background-color: pink;
-
+}
 
 .boom {
   background-color: red !important;
