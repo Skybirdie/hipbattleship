@@ -5,30 +5,135 @@ body {
   align-items: center;
 }
 
+
+
 #game-board {
   display: grid;
   grid-template-columns: repeat(10, 40px);
   grid-gap: 2px;
 }
 
+
+.option-container {
+  width: 320px;
+  height: 180px;
+  border: 4px solid #333;
+  margin: 40px 0;
+  background-color: #FFFF00;
+  display: flex;
+  align-items: center;
+}
+
+.cell.smallbird {
+  background-color: #808080;
+  background-image: url('https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/txrD27YCa0XdVAf7t9XU/pub/YizwRBzpqCtTue0xPy9F.png');
+}
+
+.cell.ttbird {
+  background-color: #808080;
+  background-image: url('https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/txrD27YCa0XdVAf7t9XU/pub/5rqdFFCKZGu0z4qHqF0A.png');
+}
+
+.cell.hummingbird {
+  background-color: #808080;
+  background-image: url('https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/txrD27YCa0XdVAf7t9XU/pub/ckjaysiOvB9Xv14ODURT.png');
+}
+
+.cell.manatee {
+  background-color: #808080;
+  background-image: url('https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/txrD27YCa0XdVAf7t9XU/pub/F4eGgz1NRxN8SwSqM6MT.png');
+}
+
+
+.cell.smallbird-preview {
+  width: 80px;
+  height: 40px;
+  border: 4px;
+}
+
+
+.cell.ttbird-preview {
+  width: 120px;
+  height: 40px;
+  border: 4px;
+}
+
+.cell.hummingbird-preview {
+  width: 80px;
+  height: 80px;
+  border: 4px;
+}
+
+.cell.manatee-preview {
+  width: 160px;
+  height: 120px;
+  border: 4px;
+}
+
+
+
+
+
 .row {
   display: contents;
 }
 
+
+
 .cell {
   width: 40px;
   height: 40px;
-  border: 1px solid #333;
+  border: 4px solid #333;
   background-color: #1e90ff;
   position: relative;
 }
 
-.cell.ship {
+
+.cell.smallbird {
   background-color: #808080;
-  background-image: url('path_to_ship_image.png');
-  background-size: cover;
-  background-position: center;
+  background-image: url('https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/txrD27YCa0XdVAf7t9XU/pub/YizwRBzpqCtTue0xPy9F.png');
 }
+.cell.smallbird-preview {
+  width: 80px;
+  height: 40px;
+  margin: 4px;
+}
+
+
+.cell.ttbird {
+  background-color: #808080;
+  background-image: url('https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/txrD27YCa0XdVAf7t9XU/pub/5rqdFFCKZGu0z4qHqF0A.png');
+}
+
+.cell.ttbird-preview {
+  width: 120px;
+  height: 40px;
+  margin: 4px;
+}
+
+.cell.hummingbird {
+  background-color: #808080;
+  background-image: url('https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/txrD27YCa0XdVAf7t9XU/pub/ckjaysiOvB9Xv14ODURT.png');
+}
+
+.cell.hummingbird-preview {
+  width: 80px;
+  height: 80px;
+  margin: 4px;
+}
+
+
+.cell.manatee {
+  background-color: #808080;
+  background-image: url('https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/txrD27YCa0XdVAf7t9XU/pub/F4eGgz1NRxN8SwSqM6MT.png');
+}
+
+.cell.manatee-preview {
+  width: 160px;
+  height: 120px;
+  margin: 4px;
+}
+
 
 .cell.hit {
   background-color: red;
@@ -40,4 +145,24 @@ body {
 
 #controls {
   margin-top: 20px;
+}
+
+
+.hover {
+  background-color: grey;
+}
+
+#computer .smallbird,
+#computer .ttbird,
+#computer .hummingbird,
+#computer .manatee {
+  background-color: pink;
+
+
+.boom {
+  background-color: red !important;
+}
+
+.empty {
+  background-color: grey !important;
 }
