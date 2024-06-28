@@ -1,13 +1,13 @@
 #gamesboard-container {
-  width: 600px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center; /* Optional: To center the boards horizontally */
 }
 
 .game-board {
   width: 300px;
   height: 300px;
-  margin: 30px 0;
+  margin: 15px 0; /* Adjusted to stack vertically */
   display: flex;
   flex-wrap: wrap;
 }
