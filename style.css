@@ -26,38 +26,6 @@
   align-items: center;
 }
 
-.smallbird-preview {
-  width: 30px;
-  height: 30px;
-  background-image: url('https://github.com/Skybirdie/hipbattleship/blob/master/images/1%20bird.png');
-  background-size: cover;
-  margin: 3px;
-}
-
-.ttbird-preview {
-  width: 60px;
-  height: 30px;
-  background-image: url('https://github.com/Skybirdie/hipbattleship/blob/master/images/trademark-ttbird_new.png');
-  background-size: cover;
-  margin: 3px;
-}
-
-.hummingbird-preview {
-  width: 60px;
-  height: 60px;
-  background-image: url('https://github.com/Skybirdie/hipbattleship/blob/master/images/hummingbird.png');
-  background-size: cover;
-  margin: 3px;
-}
-
-.manatee-preview {
-  width: 90px;
-  height: 30px;
-  background-image: url('https://github.com/Skybirdie/hipbattleship/blob/master/images/manatee.png');
-  background-size: cover;
-  margin: 3px;
-}
-
 
 .cell.hit {
   background-color: red;
@@ -71,28 +39,56 @@
   background-color: grey;
 }
 
-#computer .smallbird,
-#computer .ttbird,
-#computer .hummingbird,
-#computer .manatee {
+.smallbird-preview {
+  width: 30px;
+  height: 30px;
+  background-image: url('https://github.com/Skybirdie/hipbattleship/blob/main/images/smallbird-image.png?raw=true');
   background-size: cover;
+  margin: 3px;
+}
+
+.ttbird-preview {
+  width: 60px;
+  height: 30px;
+  background-image: url('https://github.com/Skybirdie/hipbattleship/blob/main/images/ttbird-image.png?raw=true');
+  background-size: cover;
+  margin: 3px;
+}
+
+.hummingbird-preview {
+  width: 60px;
+  height: 60px;
+  background-image: url('https://github.com/Skybirdie/hipbattleship/blob/main/images/hummingbird-image.png?raw=true');
+  background-size: cover;
+  margin: 3px;
+}
+
+.manatee-preview {
+  width: 90px;
+  height: 30px;
+  background-image: url('https://github.com/Skybirdie/hipbattleship/blob/main/images/manatee-image.png?raw=true');
+  background-size: cover;
+  margin: 3px;
 }
 
 .smallbird {
-  background-image: url('https://github.com/Skybirdie/hipbattleship/blob/master/images/1%20bird.png');
+  background-image: url('https://github.com/Skybirdie/hipbattleship/blob/main/images/smallbird-image.png?raw=true');
 }
 
 .ttbird {
-  background-image: url('https://github.com/Skybirdie/hipbattleship/blob/master/images/trademark-ttbird_new.png');
+  background-image: url('https://github.com/Skybirdie/hipbattleship/blob/main/images/ttbird-image.png?raw=true');
 }
 
 .hummingbird {
-  background-image: url('https://github.com/Skybirdie/hipbattleship/blob/master/images/hummingbird.png');
+  background-image: url('https://github.com/Skybirdie/hipbattleship/blob/main/images/hummingbird-image.png?raw=true');
 }
 
 .manatee {
-  background-image: url('https://github.com/Skybirdie/hipbattleship/blob/master/images/manatee.png');
+  background-image: url('https://github.com/Skybirdie/hipbattleship/blob/main/images/manatee-image.png?raw=true');
 }
+
+
+
 .boom {
   background-color: red !important;
 }
