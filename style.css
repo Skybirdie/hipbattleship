@@ -79,9 +79,28 @@
 #computer .ttbird,
 #computer .hummingbird,
 #computer .manatee {
-  background-color: pink;
+  background-size: cover;
 }
 
+.smallbird {
+  background-image: url('https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/txrD27YCa0XdVAf7t9XU/pub/YizwRBzpqCtTue0xPy9F.png
+');
+}
+
+.ttbird {
+  background-image: url('https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/txrD27YCa0XdVAf7t9XU/pub/5rqdFFCKZGu0z4qHqF0A.png
+');
+}
+
+.hummingbird {
+  background-image: url('https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/txrD27YCa0XdVAf7t9XU/pub/ckjaysiOvB9Xv14ODURT.png
+');
+}
+
+.manatee {
+  background-image: url('https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/txrD27YCa0XdVAf7t9XU/pub/F4eGgz1NRxN8SwSqM6MT.png
+');
+}
 .boom {
   background-color: red !important;
 }
