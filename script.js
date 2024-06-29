@@ -185,7 +185,7 @@ function handleClick(e) {
     playerTurn = false;
     const allBoardCells = document.querySelectorAll('#computer div');
     allBoardCells.forEach(cell => cell.replaceWith(cell.cloneNode(true)));
-    setTimeout(computerGo, 3000);
+    setTimeout(computerGo, 1000);
   }
 }
 
@@ -215,7 +215,7 @@ function computerGo() {
         infoDisplay.textContent = 'Nothing hit this time';
         allBoardCells[randomGo].classList.add('empty');
       }
-    }, 3000);
+    }, 1000);
 
     setTimeout(() => {
       playerTurn = true;
@@ -223,7 +223,7 @@ function computerGo() {
       infoDisplay.textContent = 'Please make your play.';
       const allBoardCells = document.querySelectorAll('#computer div');
       allBoardCells.forEach(cell => cell.addEventListener('click', handleClick));
-    }, 6000);
+    }, 2000);
   }
 }
 
